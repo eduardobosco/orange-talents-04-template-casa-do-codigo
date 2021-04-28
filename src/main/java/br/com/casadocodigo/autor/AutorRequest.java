@@ -9,7 +9,7 @@ public class AutorRequest {
 	
 	@NotBlank @Length(min = 5)
 	private String nome;
-	@NotBlank @Email
+	@NotBlank @Email 
 	private String email;
 	@NotBlank @Length(max = 400)
 	private String descricao;
