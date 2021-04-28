@@ -1,4 +1,4 @@
-package br.com.casadocodigo.dto;
+package br.com.casadocodigo.autor;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -6,9 +6,7 @@ import java.util.stream.Collectors;
 
 import com.sun.istack.NotNull;
 
-import br.com.casadocodigo.model.Autor;
-
-public class AutorDto {
+public class AutorResponse {
 
 	
 	private Long id;
@@ -18,9 +16,9 @@ public class AutorDto {
 	private LocalDateTime dataCriacaoAutor = LocalDateTime.now();
 	
 	
-	public AutorDto() {}
+	public AutorResponse() {}
 	
-	public AutorDto(Autor autor) {
+	public AutorResponse(Autor autor) {
 		super();
 		this.id = autor.getId();
 		this.nome = autor.getNome();
@@ -46,8 +44,8 @@ public class AutorDto {
 		return dataCriacaoAutor;
 	}
 
-	public static List<AutorDto> converter(List<Autor> autores) {
-		return autores.stream().map(AutorDto::new).collect(Collectors.toList());
+	public static List<AutorResponse> converter(List<Autor> autores) {
+		return autores.stream().map(AutorResponse::new).collect(Collectors.toList());
 	}
 	
 	

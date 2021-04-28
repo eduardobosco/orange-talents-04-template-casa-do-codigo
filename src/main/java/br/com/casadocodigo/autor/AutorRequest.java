@@ -7,9 +7,6 @@ import org.hibernate.validator.constraints.Length;
 
 import com.sun.istack.NotNull;
 
-import br.com.casadocodigo.model.Autor;
-import br.com.casadocodigo.repository.AutorRepository;
-
 public class AutorRequest {
 	
 	

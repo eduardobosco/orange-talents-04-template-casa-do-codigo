@@ -1,4 +1,4 @@
-package br.com.casadocodigo.controller;
+package br.com.casadocodigo.autor;
 
 import java.util.List;
 
@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.casadocodigo.autor.AutorRequest;
-import br.com.casadocodigo.dto.AutorDto;
-import br.com.casadocodigo.model.Autor;
-import br.com.casadocodigo.repository.AutorRepository;
-
 @RestController
 @RequestMapping("/autores")
 public class AutorController {
@@ -25,9 +20,9 @@ public class AutorController {
 	AutorRepository autorRepository;
 
 	@GetMapping
-	public List<AutorDto> listar() {
+	public List<AutorResponse> listar() {
 		List<Autor> autores = autorRepository.findAll();
-		return AutorDto.converter(autores);
+		return AutorResponse.converter(autores);
 	}
 	
 	@PostMapping
