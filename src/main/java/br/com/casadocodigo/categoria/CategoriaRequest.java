@@ -2,9 +2,12 @@ package br.com.casadocodigo.categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.casadocodigo.compartilhado.UniqueValue;
+
 public class CategoriaRequest {
 	
 	@NotBlank 
+	@UniqueValue(domainClass=Categoria.class, fieldName="nome", message="Esta Categoria ja esta cadastrada")
 	private String nome;
 	
 	public CategoriaRequest() {}
