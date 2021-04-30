@@ -5,6 +5,9 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.com.casadocodigo.autor.AutorResponse;
+import br.com.casadocodigo.categoria.CategoriaResponse;
+
 public class LivroResponse {
 	
 	private String titulo;
@@ -14,8 +17,8 @@ public class LivroResponse {
 	private Integer numeroPaginas;
 	private String isbn;
 	private LocalDate dataPublicacao;
-	private Long idAutor;
-	private Long idCategoria;
+	private AutorResponse idAutor;
+	private CategoriaResponse idCategoria;
 	
 	public LivroResponse() {}
 	
@@ -27,8 +30,8 @@ public class LivroResponse {
 		this.numeroPaginas = livro.getNumeroPaginas();
 		this.isbn = livro.getIsbn();
 		this.dataPublicacao = livro.getDataPublicacao();
-		this.idAutor = livro.getAutor().getId();
-		this.idCategoria = livro.getCategoria().getId();
+		this.idAutor = new AutorResponse(livro.getAutor());
+		this.idCategoria = new CategoriaResponse(livro.getCategoria());
 		
 	}
 
@@ -60,11 +63,11 @@ public class LivroResponse {
 		return dataPublicacao;
 	}
 
-	public Long getIdAutor() {
+	public AutorResponse getIdAutor() {
 		return idAutor;
 	}
 
-	public Long getIdCategoria() {
+	public CategoriaResponse getIdCategoria() {
 		return idCategoria;
 	}
 

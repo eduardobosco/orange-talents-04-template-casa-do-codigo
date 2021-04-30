@@ -21,7 +21,7 @@ public class Autor {
 
 	private String email;
 
-	private String descrição;
+	private String descricao;
 
 	@NotNull
 	@CreationTimestamp
@@ -32,20 +32,20 @@ public class Autor {
 	public Autor() {
 	};
 
-	public Autor(String nome, String email, String descrição) {
+	public Autor(String nome, String email, String descricao) {
 		super();
 		this.nome = nome;
 		this.email = email;
-		this.descrição = descrição;
+		this.descricao = descricao;
 	}
 	
 
-	public Autor(Long id, String nome, String email, String descrição, @NotNull LocalDateTime dataCriacaoAutor) {
+	public Autor(Long id, String nome, String email, String descricao, @NotNull LocalDateTime dataCriacaoAutor) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
-		this.descrição = descrição;
+		this.descricao = descricao;
 		this.dataCriacaoAutor = dataCriacaoAutor;
 
 	}
@@ -62,8 +62,8 @@ public class Autor {
 		return email;
 	}
 
-	public String getDescrição() {
-		return descrição;
+	public String getDescricao() {
+		return descricao;
 	}
 
 	public LocalDateTime getDataCriacaoAutor() {
@@ -97,7 +97,7 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor [id=" + id + ", nome=" + nome + ", email=" + email + ", descrição=" + descrição
+		return "Autor [id=" + id + ", nome=" + nome + ", email=" + email + ", descrição=" + descricao
 				+ ", dataCriacaoAutor=" + dataCriacaoAutor + "]";
 	}
 
