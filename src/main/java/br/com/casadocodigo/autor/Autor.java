@@ -26,6 +26,7 @@ public class Autor {
 	@NotNull
 	@CreationTimestamp
 	private LocalDateTime dataCriacaoAutor = LocalDateTime.now();
+	
 
 	@Deprecated
 	public Autor() {
@@ -46,6 +47,7 @@ public class Autor {
 		this.email = email;
 		this.descrição = descrição;
 		this.dataCriacaoAutor = dataCriacaoAutor;
+
 	}
 
 	public Long getId() {
