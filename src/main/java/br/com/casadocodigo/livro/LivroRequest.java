@@ -16,6 +16,7 @@ import br.com.casadocodigo.autor.Autor;
 import br.com.casadocodigo.autor.AutorRepository;
 import br.com.casadocodigo.categoria.Categoria;
 import br.com.casadocodigo.categoria.CategoriaRepository;
+import br.com.casadocodigo.compartilhado.ExistsId;
 import br.com.casadocodigo.compartilhado.UniqueValue;
 
 public class LivroRequest {
@@ -39,8 +40,10 @@ public class LivroRequest {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "GMT" )
 	private LocalDate dataPublicacao;
 	@NotNull
+	@ExistsId(domainClass = Autor.class, fieldName = "id", message="Este id de Autor não existe")
 	private Long idAutor;
 	@NotNull
+	@ExistsId(domainClass = Categoria.class, fieldName = "id", message="Este id de Categoria não existe")
 	private Long idCategoria;
 	
 	public LivroRequest () {}

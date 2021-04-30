@@ -1,6 +1,5 @@
 package br.com.casadocodigo.livro;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.transaction.Transactional;
