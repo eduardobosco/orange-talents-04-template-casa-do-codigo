@@ -2,6 +2,7 @@ package br.com.casadocodigo.livro;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,7 +17,7 @@ public class LivroResponse {
 	private BigDecimal preco;
 	private Integer numeroPaginas;
 	private String isbn;
-	private LocalDate dataPublicacao;
+	private String dataPublicacao;
 	private AutorResponse idAutor;
 	private CategoriaResponse idCategoria;
 	
@@ -29,7 +30,7 @@ public class LivroResponse {
 		this.preco = livro.getPreco();
 		this.numeroPaginas = livro.getNumeroPaginas();
 		this.isbn = livro.getIsbn();
-		this.dataPublicacao = livro.getDataPublicacao();
+		this.dataPublicacao = livro.getDataPublicacao().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		this.idAutor = new AutorResponse(livro.getAutor());
 		this.idCategoria = new CategoriaResponse(livro.getCategoria());
 		
@@ -59,7 +60,7 @@ public class LivroResponse {
 		return isbn;
 	}
 
-	public LocalDate getDataPublicacao() {
+	public String getDataPublicacao() {
 		return dataPublicacao;
 	}
 
