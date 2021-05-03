@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Documented
 public @interface UniqueValue {
 
-	String message() default "{unique.value.violation}";
+	String message() default "{Violação de valor Unico}";
 
 	Class<?>[] groups() default {};
 

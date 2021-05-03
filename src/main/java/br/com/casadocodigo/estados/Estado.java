@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.util.Assert;
+
 import br.com.casadocodigo.pais.Pais;
 
 @Entity
@@ -40,4 +42,14 @@ public class Estado {
 		return pais;
 	}
 
+	private boolean pertenceAoPais(Pais pais) {
+		Assert.notNull(pais, "Não podemos ter uma país nulo para fazer a comparação");
+		
+		return this.pais.equals(pais);
+	}
+
+	public boolean naoPertenceAoPais(Pais pais) {
+		Assert.notNull(pais, "Não podemos ter uma país nulo para fazer a comparação");
+		return !pertenceAoPais(pais);
+	}
 }
